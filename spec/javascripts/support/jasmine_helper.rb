@@ -12,7 +12,3 @@
 #Jasmine.configure do |config|
 #   config.prevent_phantom_js_auto_install = true
 #end
-#
-Jasmine.configure do |config|
-  config.ci_port = 3001
-end
