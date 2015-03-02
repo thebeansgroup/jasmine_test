@@ -39,7 +39,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 group :development, :test do
-  gem 'jasmine_selenium_runner'
   gem 'jasmine'
   gem 'dotenv-rails'
   gem 'pry'
