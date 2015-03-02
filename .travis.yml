@@ -7,3 +7,5 @@ addons:
     username: luxerama
     access_key:
       secure: "dU5iaYGvK/YF5SxdVds1wX0S2wyCRw5VAEk8LJCXKZtrMfORUEnT7i6DPfigM56UY1sgCJ2nqfO6PEpvnNMenKqPXkEAJu2xrS73Vie0cmV7/Fhf/kBeT2IsAH4F2IUNoPU3ojSaT84dzCHR+I0F+GtU4OluPIBbhGT5Wv3St9Y="
+
+script: bundle exec jasmine:ci --trace
