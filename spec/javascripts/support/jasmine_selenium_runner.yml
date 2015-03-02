@@ -1,4 +1,4 @@
 ---
 selenium_server: http://<%= ENV['BS_USERNAME'] %>:<%= ENV['BS_AUTHKEY'] %>@<%= ENV['SELENIUM_HOST'] %>
-#browser: <%= ENV['JASMINE_BROWSER'] %>
-#configuration_class: BrowserstackJasmineSeleniumRunner
+browser: firefox #<%= ENV['JASMINE_BROWSER'] %>
+configuration_class: BrowserstackJasmineSeleniumRunner

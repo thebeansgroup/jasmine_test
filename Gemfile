@@ -42,4 +42,5 @@ group :development, :test do
   gem 'jasmine_selenium_runner'
   gem 'jasmine'
   gem 'dotenv-rails'
+  gem 'pry'
 end
