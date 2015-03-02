@@ -1,32 +1,28 @@
-language: ruby
-rvm:
-  - 2.0.0
-
 before_script:
-  - curl https://gist.githubusercontent.com/luxerama/17519b46d71997fa20c0/raw/96c9c71ef146ffd48d2dc522b3b89adfdae5da9c/sauce_connect_setup.sh
+- curl https://gist.githubusercontent.com/luxerama/17519b46d71997fa20c0/raw/96c9c71ef146ffd48d2dc522b3b89adfdae5da9c/sauce_connect_setup.sh
 script: bundle exec rake jasmine:ci
 rvm:
-  - 2.0.0
+- 2.0.0
 env:
   global:
-    - USE_SAUCE=true
-    - secure: "bRimjiy4bFC/3g+nvHwEcbXNwEORB3/OBH0oAd96gqaDuCnnd59SRDRVoiMszaJa/eoMdW9DF3suOVHC2rqpKiOmrr+qpUtYf7vEmfx7lZ6NMv94eBowJZu5sMZuNQetuidCOhQI/IgCNZqhwQCNh0Qb7Ajb0p5hGJz5aQpZ6gA="
-    - secure: "WzcLPpcNn7dAZOxpHOrcAOxF1DYSiDSAE0a4v9Ud15OPtb880jKfsLM7lZiqJI1oHC/LDx5N56G/43k9bHGJgyLiu0lJhCdvNiJHCRTz3AW8Wxao2IN5cVZ8St4jKliNEbrpxNMCBi2pz0UaHXHwTTTy5L2ugDGyiXZgFGaH0T4="
-    matrix:
-      include:
-      - env:
-        - JASMINE_BROWSER="firefox"
-        - SAUCE_OS="Linux"
-        - SAUCE_BROWSER_VERSION=''
-      - env:
-        - JASMINE_BROWSER="safari"
-        - SAUCE_OS="OS X 10.8"
-        - SAUCE_BROWSER_VERSION=6
-      - env:
-        - JASMINE_BROWSER="internet explorer"
-        - SAUCE_OS="Windows 8"
-        - SAUCE_BROWSER_VERSION=10
-      - env:
-        - JASMINE_BROWSER="chrome"
-        - SAUCE_OS="Linux"
-        - SAUCE_BROWSER_VERSION=''
+  - USE_SAUCE=true
+  - secure: "bRimjiy4bFC/3g+nvHwEcbXNwEORB3/OBH0oAd96gqaDuCnnd59SRDRVoiMszaJa/eoMdW9DF3suOVHC2rqpKiOmrr+qpUtYf7vEmfx7lZ6NMv94eBowJZu5sMZuNQetuidCOhQI/IgCNZqhwQCNh0Qb7Ajb0p5hGJz5aQpZ6gA="
+  - secure: "WzcLPpcNn7dAZOxpHOrcAOxF1DYSiDSAE0a4v9Ud15OPtb880jKfsLM7lZiqJI1oHC/LDx5N56G/43k9bHGJgyLiu0lJhCdvNiJHCRTz3AW8Wxao2IN5cVZ8St4jKliNEbrpxNMCBi2pz0UaHXHwTTTy5L2ugDGyiXZgFGaH0T4="
+matrix:
+  include:
+  - env:
+    - JASMINE_BROWSER="firefox"
+    - SAUCE_OS="Linux"
+    - SAUCE_BROWSER_VERSION=''
+  - env:
+    - JASMINE_BROWSER="safari"
+    - SAUCE_OS="OS X 10.8"
+    - SAUCE_BROWSER_VERSION=6
+  - env:
+    - JASMINE_BROWSER="internet explorer"
+    - SAUCE_OS="Windows 8"
+    - SAUCE_BROWSER_VERSION=10
+  - env:
+    - JASMINE_BROWSER="chrome"
+    - SAUCE_OS="Linux"
+    - SAUCE_BROWSER_VERSION=''
