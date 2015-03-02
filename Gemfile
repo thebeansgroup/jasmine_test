@@ -40,6 +40,8 @@ gem 'spring',        group: :development
 
 group :development, :test do
   gem 'jasmine'
+  gem 'jasmine_selenium_runner'
   gem 'dotenv-rails'
   gem 'pry'
+  gem "sauce-connect"
 end
