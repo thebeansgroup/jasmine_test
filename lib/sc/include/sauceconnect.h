@@ -26,17 +26,14 @@ void sc_free(struct sc_ctx *ctx);
 #define SC_PARAM_KGP_PORT 0x03      /* int */
 #define SC_PARAM_EXT_HOST 0x04      /* char * */
 #define SC_PARAM_EXT_PORT 0x05      /* int */
-#define SC_PARAM_LOGFILE 0x06       /* char * */
-#define SC_PARAM_LOGLEVEL 0x07      /* int */
-#define SC_PARAM_MAX_LOGSIZE 0x08   /* int */
-#define SC_PARAM_CERTFILE 0x09      /* char * */
-#define SC_PARAM_KEYFILE 0x0a       /* char * */
-#define SC_PARAM_LOCAL_PORT 0x0b    /* int */
-#define SC_PARAM_USER 0x0c          /* char * */
-#define SC_PARAM_API_KEY 0x0d       /* char * */
-#define SC_PARAM_PROXY 0x0e         /* char * */
-#define SC_PARAM_PROXY_USERPWD 0x0f /* char * */
-#define SC_PARAM_RECONNECT 0x10     /* int */
+#define SC_PARAM_CERTFILE 0x06      /* char * */
+#define SC_PARAM_KEYFILE 0x07       /* char * */
+#define SC_PARAM_LOCAL_PORT 0x08    /* int */
+#define SC_PARAM_USER 0x09          /* char * */
+#define SC_PARAM_API_KEY 0x0a       /* char * */
+#define SC_PARAM_PROXY 0x0b         /* char * */
+#define SC_PARAM_PROXY_USERPWD 0x0c /* char * */
+#define SC_PARAM_RECONNECT 0x0d     /* int */
 int sc_get(struct sc_ctx *ctx, int param, void *value, size_t vlen);
 int sc_set(struct sc_ctx *ctx, int param, void *value);
 
@@ -74,6 +71,13 @@ int sc_status(struct sc_ctx *ctx);
 #define SC_INFO_KGP_LAST_STATUS_CHANGE 0x02
 int sc_get_info(struct sc_ctx *ctx, int what, int *info);
 
+/*
+ * Set a log callback the library will call when logging messages.
+ */
+typedef void (*sc_log_cb)(int severity, const char *msg);
+
+void sc_set_log_fn(sc_log_cb cb);
+
 #define SC_EXITCODE_UNKNOWN 0
 #define SC_EXITCODE_ALLOC_ERROR 1
 #define SC_EXITCODE_LOCAL_LISTEN_ERROR 2
@@ -98,7 +102,10 @@ static inline char *sc_err2str(int exitcode)
             return "Allocation failed - out of memory?";
             break;
         case SC_EXITCODE_LOCAL_LISTEN_ERROR:
-            return "Failed to start Selenium listener";
+            return "Failed to start Selenium listener. "
+                "Please make sure there are no other applications using "
+                "the Selenium port, or specify an alternative port for "
+                "Sauce Connect via the --se-port option";
             break;
         case SC_EXITCODE_LOCAL_ACCEPT_ERROR:
             return "Failed to accept Selenium connection";
@@ -132,4 +139,15 @@ static inline char *sc_err2str(int exitcode)
             break;
     }
 }
+
+/*
+ * Enable SSL verification for KGP. This is the default.
+ */
+void sc_ssl_enable_verification(void);
+
+/*
+ * Disable SSL verification for KGP. This is the default.
+ */
+void sc_ssl_disable_verification(void);
+
 #endif
