@@ -1,4 +1,3 @@
-script: bundle exec rake jasmine:ci
 rvm:
 - 2.0.0
 env:
@@ -24,3 +23,5 @@ matrix:
     - JASMINE_BROWSER="chrome"
     - SAUCE_OS="Linux"
     - SAUCE_BROWSER_VERSION=''
+
+script: bundle exec rake jasmine:ci --trace
