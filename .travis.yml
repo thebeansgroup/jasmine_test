@@ -1,7 +1,5 @@
 rvm:
 - 2.0.0
-addons:
-  sauce_connect: true
 env:
   global:
   - USE_SAUCE=true
