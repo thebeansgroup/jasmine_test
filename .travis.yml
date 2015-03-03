@@ -24,6 +24,6 @@ matrix:
     - SAUCE_OS="Linux"
     - SAUCE_BROWSER_VERSION=''
 before_script:
-  - curl -L https://gist.githubusercontent.com/luxerama/9b30a07b1f1295e9134d/raw/49dc3e298c03af76ddaaba5fc8de4380e0eef249/sauce-connect.sh | bash
+  - curl -L https://gist.githubusercontent.com/luxerama/9b30a07b1f1295e9134d/raw/sauce-connect.sh | bash
 
 script: bundle exec rake jasmine:ci --trace
