@@ -1,3 +1,3 @@
 Sauce.config do |c|
-  c[:sauce_connect_4_executable] = ENV['SAUCE_CONNECT_BIN']
+  c[:sauce_connect_4_executable] = ENV['SAUCE_CONNECT_BIN'] || './lib/sc/bin/sc'
 end
