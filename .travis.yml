@@ -2,7 +2,7 @@ rvm:
 - 2.0.0
 env:
   global:
-  - SAUCE_TMP_DIR="$(mktemp -d -t sc.XXXX)
+  - SAUCE_TMP_DIR="$(mktemp -d -t sc.XXXX)"
   - SAUCE_CONNECT_BIN="${SAUCE_TMP_DIR}/sauce-connect/bin/sc"
   - USE_SAUCE=true
   - secure: "bRimjiy4bFC/3g+nvHwEcbXNwEORB3/OBH0oAd96gqaDuCnnd59SRDRVoiMszaJa/eoMdW9DF3suOVHC2rqpKiOmrr+qpUtYf7vEmfx7lZ6NMv94eBowJZu5sMZuNQetuidCOhQI/IgCNZqhwQCNh0Qb7Ajb0p5hGJz5aQpZ6gA="
