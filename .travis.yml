@@ -1,5 +1,3 @@
-before_script:
-- curl https://gist.githubusercontent.com/luxerama/17519b46d71997fa20c0/raw/96c9c71ef146ffd48d2dc522b3b89adfdae5da9c/sauce_connect_setup.sh
 script: bundle exec rake jasmine:ci
 rvm:
 - 2.0.0
